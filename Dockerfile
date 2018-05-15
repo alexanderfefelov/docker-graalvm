@@ -1,11 +1,10 @@
 FROM debian:stretch-slim
 
-ENV GRAALVM_VERSION=1.0.0-rc1 \
-\
-  GRAALVM_HOME=/graalvm-$GRAALVM_VERSION \
-  JAVA_HOME=$GRAALVM_HOME \
-  PATH=$GRAALVM_HOME/bin:$PATH \
-  DEBIAN_FRONTEND=noninteractive
+ENV GRAALVM_VERSION=1.0.0-rc1
+ENV GRAALVM_HOME=/graalvm-$GRAALVM_VERSION
+ENV JAVA_HOME=$GRAALVM_HOME
+ENV PATH=$GRAALVM_HOME/bin:$PATH
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends ca-certificates wget \
