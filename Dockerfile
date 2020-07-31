@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM ubuntu:20.04
 
 ENV GRAALVM_VERSION=20.1.0
 ENV GRAALVM_JAVA_VERSION=8
