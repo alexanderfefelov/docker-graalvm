@@ -9,5 +9,5 @@ ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$JAVA_HOME/bin:$PATH
 
 ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_STUFF /
-RUN tar --extract --gzip --file /$GRAALVM_STUFF \
-  && rm --force /$GRAALVM_STUFF
+RUN tar --extract --gzip --file=$GRAALVM_STUFF \
+  && rm --force $GRAALVM_STUFF
