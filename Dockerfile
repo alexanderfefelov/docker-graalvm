@@ -11,10 +11,10 @@ RUN apt-get -qq update \
        wget \
   && wget --quiet https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_STUFF \
   && tar --extract --gzip --file=$GRAALVM_STUFF \
-  && rm --force $GRAALVM_STUFF \
   && ln --symbolic $GRAALVM_HOME /graalvm \
   && apt-get -qq clean \
-  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && rm --force $GRAALVM_STUFF
 
 ENV JAVA_HOME=/graalvm
 ENV PATH=$JAVA_HOME/bin:$PATH
